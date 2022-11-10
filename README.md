@@ -17,7 +17,7 @@ Stateful widget adalah widget yang dapat mengalami pengubahan state, contohnya a
 8. MyApp: untuk membuat app
 
 ## Apa fungsi dari setState()? Jelaskan  variabel apa saja yang dapat terdampak dengan fungsi tersebut.
-setState() berfungsi untuk merebuild widget agar memberikan tampilan yang sesuai dengan perubahan yang telah dilakukan.
+setState() berfungsi untuk memberikan tanda pada framework bahwa terdapat perubahan pada state sehingga perlu adanya pemanggilan build lagi agar memberikan tampilan sesuai dengan perubahan yang dilakukan.
 Variabel yang dapat terdampak adalah semua jenis variabel yang dapat mengalami perubahan value.
 Pada tugas 7, variabel yang berubah adalah _counter
 
@@ -35,7 +35,7 @@ Saya menambahkan floating action button baru yang memiliki icon (-) dan berfungs
 3. Mengimplementasikan logika pada tombol +<br>
 Tombol + sudah secara default mengincrement isi dari _counter dan hal itu saya manfaatkan.
 4. Mengimplementasikan logika pada tombol -<br>
-Saat tombol - dipencet akan dipanggil fungsi decrementCounter yang berfungsi untuk mendecrement counter sekaligus merebuild widget agar memberikan tampilan sesuai dengan perubahan.
+Saat tombol - dipencet akan dipanggil fungsi decrementCounter yang berfungsi untuk mendecrement counter sekaligus menjalankan setState() agar memberikan tampilan sesuai dengan perubahan. Saat akan melakukan perubahan pada _counter, terdapat conditional sehingga jika _counter bernilai 0 _counter tidak akan di decrement.
 5. Apabila counter bernilai ganjil, maka teks indikator berubah menjadi "GANJIL" dengan warna biru.<br>
 Di dalam method build, terdapat variabel text yang akan mempunyai value string "GANJIL" jika _counter bernilai ganjil.
 Terdapat juga variabel textColor yang berisikan color berwarna biru jika _counter bernilai ganjil.
