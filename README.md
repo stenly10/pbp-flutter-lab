@@ -47,6 +47,41 @@ Lalu, variabel text dan textColor dimasukkan ke widget Text agar bisa ditampilka
 Value variabel text awalnya akan selalu bernilai string "GENAP" dan textColor akan bernilai color red. Kedua variabel akan berubah value jika _counter modulo 2 hasilnya sama dengan 1 sehingga untuk kasus value _counter sama dengan 0 sudah terhandle.
 
 
+# Tugas 8
+## Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement
+Navigator.push = push route baru ke top of stack <br>
+Navigator.pushReplacement = mengganti top of stack dengan route baru
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali
+1. Text: untuk menampilkan tulisan
+2. Row: untuk mengatur layout widget di dalamnya berdasarkan barisan
+3. Padding: untuk memberikan padding pada childnya
+4. Drawer: untuk membuat drawer pilihan halaman
+5. Column: untuk mengatur layour widget di dalamnya berdasarkan kolom
+6. TextFormField: untuk membuat text field
+7. TextButton: untuk membuat button dengan text
+8. ButtonStyle: untuk memberikan styling pada button
+9. FormBudgetPage: untuk membuat tampilan form budget
+10. ShowDataPage: untuk membuat tampilan data budget
+
+## Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed)
+1. onPressed
+2. onTap
+3. onSaved
+4. onChanged
+
+## Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter
+Navigator mengubah page dengan sistem stack. Navigator mempush route baru ke top of stack agar menampilkan page baru. Navigator mempop top of stack agar kembali ke halaman awal.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Menambahkan drawer/hamburger menu pada app yang telah dibuat sebelumnya.<br>
+Saya membuat drawer yang berisikan tiga ListTile yang berfungsi untuk pindah ke page lain. Drawer tersebut saya masukkan di main.dart, form.dart, dan show_data.dart
+2. Menambahkan tiga tombol navigasi pada drawer/hamburger. <br>
+Saya menggunakan ListTile sebagai tombol untuk navigasi ke halaman lain. ListTile pertama dengan title counter_7 untuk mengarah ke page counter. ListTile kedua dengan title Tambah Budget untuk mengarah ke page Form Budget. ListTile ketiga dengan title Data Budget untuk mengarah ke page Data Budget. ListTile menavigasi ke page lain dengan menggunakan Navigator.pushReplacement.
+3. Menambahkan halaman form<br>
+Sayan membuat satu file baru bernama form.dart agar dapat menampilkan form budget. Saya menambahkan dua elemen input berupa text field dengan widget TextFormField. Satu textfield berguna untuk mengambil input bertipe String untuk judul dari budget. Satunya lagi berguna untuk mengambil input bertipe String digit untuk nominal budget. Kemudian String digit dikonversikan menjadi int untuk disimpan. Saya juga menambahkan elemen dropdown dengan menggunakan widget Dropdown untuk menambahkan pilihan pemasukan dan pengeluaran. Widget Dropdown memiliki atribut hide sehingga saat value dari dropdown bernilai null, dropdown akan menampilkan value dari hide. Saya juga menambahkan satu button dengan widget TextButton untuk menyimpan hasil dari input user ke listData
+4. Menambahkan halaman data budget<br>
+Saya membuat satu file baru bernama show_data.dart untuk menampilkan hasil inputan user di Form Budget. Saya menggunakan list.generate untuk menghasilkan widget-widget card di mana card tersebut akan berfungsi untuk menampilkan data di dalam listData. listData pada index 0 berisi judul, index 1 berisi nominal, index 2 berisi jenis pemasukan atau pengeluaran.
 
 
 A new Flutter project.
