@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/show_data.dart';
+import 'package:counter_7/page/show_data.dart';
 import 'package:flutter/services.dart';
+import 'package:counter_7/page/mywatchlist.dart';
 
 var listData = [];
 
@@ -59,6 +60,15 @@ class _FormBudgetState extends State<FormBudgetPage> {
                 );
               },
             ),
+            ListTile(
+                title: const Text('My Watch List'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyWatchListPage()),
+                  );
+                }),
           ],
         ),
       ),
